@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang=en>
+<head>
+  <link rel="shortcut icon" href="logo.ico">
+  <title>MORA</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+   <img src="logo.ico" height="100px" width="100px">
+   <h1>Mora Enterprises</h1>
+   <h4>Your satisfaction is our business</h4>
+  </header>
+  <section>
+    <h2 class="hung">You're Hungry?<br /> <hr> Welcome!</h2>
+    <p class="tell">We are here to meet all your needs when it comes to fast-healthy-snacks</p><br><br>
+    <p>About us</p>
+  </section>
+  <section class="first">
+    <h2>
+     OUR PRODUCTS<br>
+    </h2>
+    <article class="card">
+      <div class="icons">
+       <img src="delish.png" alt="Lovely smoothie" style=width:200px;height:200px;>
+      </div>
+      <div class="icons">
+       <img src="drinks.jpg" alt="Lovely smoothie" style=width:200px;height:200px;>
+      </div>
+      <button onclick="myFunction(this, 'yellow')">Contact</button>
+    </article>
+    <article class="card">
+      <div class="icons">&#128512;</div>
+    </article>
+  </section>
+  <section>
+    <h2>My Order:</h2>
+    <form id="my-form">
+    <table>
+      <tr>
+         <td>Name:</td>
+         <td><input type="text" size="25" name="my-name"></td>
+      </tr>
+      <tr>
+         <td>Address:</td>
+         <td><input type="text" size="25" name="my-address"></td>
+      </tr>
+      <tr>
+         <td>Favourite flavour:</td>
+         <td>
+            <select name="my-flavour">
+               <option>Vanilla</option>
+               <option>Chocolate</option>
+               <option>Strawberry</option>
+            </select> 
+         </td>
+      </tr>
+      <tr>
+         <td>Quantity:</td>
+         <td><input type="number" name="my-quantity" value="1" min="1" max="5">
+             <small>(max 5)</small>
+         </td>
+      </tr>
+      <tr>
+         <br>
+      </tr>
+      <tr>
+         <td colspan="2">
+            <input class="button" type="button" value="Process Order" onclick="placeOrder();">
+            <input class="button" type="reset" value="Clear" onclick="document.getElementById('my-order').style.display = 'none'";>
+         </td>
+      </tr>
+    </table>
+    <div id="my-order">
+    </div>
+    </form>
+  </section>
+  <div class="footer">
+    <h3>Thank you for doing business with us!</h3>
+    <div class="container">
+      <article class="card">
+        <h3>Get in touch</h3>
+        <p>For the best "products"</p>
+      </article>
+      <article class="card">
+        <h3>Contact us</h3>
+        <p>Loving our "products" or have any complaints?<br>
+           Call or emil us. <br>
+           Cell:+1122334455 | Email:yulemsee@campo.assignment
+        </p>
+      </article>
+    </div>
+   &copy; 202 "Mora Enterprises"
+  </div>
+<script>
+function placeOrder() {
+   var orderForm = document.getElementById("my-form");
+   results = "<h3>Success!</h3> Here is your order.";
+   results += "<br>Name: " + orderForm.elements["my-name"].value;
+   results += "<br>Address: " + orderForm.elements["my-address"].value;
+   results += "<br>I like to order: " + orderForm.elements["my-flavour"].value;
+   results += "<br>Quantity: " + orderForm.elements["my-quantity"].value + "PCs";
+   var orderResults = document.getElementById("my-order");
+   orderResults.style.display = "block";
+   orderResults.innerHTML = results;
+}
+
+function myFunction(elmnt,clr) {
+  elmnt.style.background = clr;
+}
+</script>
+</body>
+</html>
